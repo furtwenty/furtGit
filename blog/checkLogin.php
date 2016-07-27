@@ -16,7 +16,7 @@ function test($usrName,$usrPass) {
 
 	$chk = array();
 	
-	$fileParse = file_get_contents(".\\users.txt");
+	$fileParse = file_get_contents("./users.txt");
 	
 	$j = json_decode($fileParse,true);
 	
