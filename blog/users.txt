@@ -1,0 +1,18 @@
+{
+	"usrInfo" : {
+	
+		"usr1" : {
+		
+			"usrName" : "Mike",
+			
+			"usrPass" : "Taco"
+		},
+		
+		"usr2" : {
+		
+			"usrName" : "Steve",
+			
+			"usrPass" : "Burrito"
+		}
+	}
+}

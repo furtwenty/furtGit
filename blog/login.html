@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<meta charset="ISO-8859-1">
+<title>M-Blog Login</title>
+</head>
+<body>
+
+<h1>M-Blog</h1>
+
+<form>
+<div id="msg1">Please Login:</div>
+
+User Name: <input type="text" name="uid" id="usrid" placeholder=""/><div id="ndiv"></div>
+
+Password: <input type="text" name="upass" id="usrpass" placeholder="" /><div id="pdiv"></div>
+
+<input type="button" id="sub1" name="submit" value="Submit"/> 
+<br>
+</form>
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	// GET THE DOM OBJECTS
+	var btn1 = $("#sub1");
+	
+	btn1.click (function () {
+		
+		var usname = $("#usrid").val();
+		var uspass = $("#usrpass").val();
+
+		$("#ndiv").html("");
+		$("#pdiv").html("");
+
+	 	$.post("checkLogin.php",
+		
+	 	{a:usname,b:uspass},
+			
+		function(data){
+			
+	 		var object = JSON.parse(data);
+	 		//alert(object.result.errname);
+	 		//alert(object.result.errpass);
+	 		//alert(object.result.user);
+	 		//alert(object.result.pass);
+
+	 		if(object.result.errname=='invalid'){
+	 			
+	 			$("#ndiv").html("* Name Required");
+	 			
+
+	 		}
+	 		if(object.result.errpass=='invalid'){
+	 			
+	 			$("#pdiv").html("* Pass Word Required");
+
+	 		}
+	 		
+	 		if(object.result.user=='invalid'){
+	 			
+	 			$("#ndiv").html("* Invalid UserName");
+	 			$("#usrid").focus(
+	 				    function(){
+	 				        $(this).val('');
+	 				    });
+	 			$("#usrpass").focus(
+	 				    function(){
+	 				        $(this).val('');
+	 				    });
+	 			
+	 			
+	 		}else if(object.result.pass=='invalid'){
+	 			$("#pdiv").html("* Invalid PassWord");
+	 			$("#usrpass").focus(
+	 				    function(){
+	 				        $(this).val('');
+	 				    });
+	 			
+	 		}else if(object.result.pass=='valid' && object.result.user=='valid' ){
+	 			
+	 			alert("Loggin In");
+	 		
+	 			
+	 			window.location.href = "viewPosts.php? usnr="+usname;
+		 		$("#usrpass").val("");
+		 		$("#usrid").val("");
+	 			 
+	 		}
+	 		
+		}
+	 	
+	 	);
+	});
+
+});
+</script>
+
+</body>
+</html>
