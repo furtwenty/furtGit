@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+	type="text/javascript"></script>
+<script src="lib.js" type="text/javascript"></script>
+
+<title>M-Library</title>
+<style type="text/css">
+
+#logbar{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:40px;
+	background-color:gray;
+}
+
+html{
+	width:100%;
+	height:1000px;
+	background-color:olive;
+	
+
+}
+
+#html{
+	position:inherit;
+	width:100%;
+	height:100%;
+	background-color:teal;
+	
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 20px;
+	margin-left: 20px;
+	left: 10px;
+}
+
+</style>
+</head>
+<body>
+	
+	<div id="logbar"></div>
+
+	<br><br>
+	<div id="html">
+	
+	<h1>M-Library</h1>
+
+	Check Out Book: ([Copy ID])	
+	<br>
+	<br>
+	<input type="text" id="chkbtxt" name="bookchk"/>
+	<input type="button" id="chkbook" value="Check Out" />
+	<br>
+	<label id="lblchkbook"></label>
+	<br></br>
+	
+	Return Book: ([Copy ID])	
+	<br>
+	<br>
+	<input type="text" id="retbtxt" name="bookret"/>
+	<input type="button" id="retbook" value="Return" />
+	<br>
+	<label id="lblretbook"></label>
+	<br></br>
+	
+	
+	<!--div for displaying add book form-->
+	<div id="divaddbook" ></div>
+	<br></br>
+	
+	<!-- Button for dyspaying library -->
+	<br>
+	<input type="button" id="showlib" value="Show Library" />
+	<br>
+
+	<!-- div for dysplaying generated table -->
+	<div id="divlib" style="height:200px;width:auto;overflow:auto;"></div>
+	<div id="divbookdet" style="height:150px;width:auto;overflow:auto;"></div>
+	<br>
+	
+	</div>
+	
+	
+	
+	
+	<div id='error'>
+	
+		
+	
+	
+	</div>
+
+</body>
+
+</html>
