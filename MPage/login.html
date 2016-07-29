@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="login.js" type="text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M-Page Login</title>
+<link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+
+
+<div class="hdr">
+
+	<h1 class="hdr1">M-Page :: Digital Life</h1>
+	
+</div>
+<br>
+<div class='main' id='mainpanel'>
+
+	<div class ='box' id='boxes'>
+		<div class='popbox' id='fancy'>
+			<h5>A Life of Pictures:</h5>
+	    		<p>
+	    		An image is worth one thousand words...
+	    		</p>
+	    		<p>
+	         	Create a wall of your images to tell the story of your life!
+	     		</p>
+	     		
+	
+		</div>
+	</div>
+
+	<div id="bx1" class="bx1">
+		
+		<label class="msg1">Please Login:</label>
+		
+		<form class="lginpt" id="lginpt">
+		 	
+			<label >User Name: </label>
+			<input type="text" name="uid" id="usrid" placeholder="" style="border-radius: 5px; margin-left: 10px;"/>
+			<br>
+			<div id="ndiv"></div>
+			
+			<label>Password: </label>
+			<input type="text" name="upass" id="usrpass" placeholder="" style="border-radius: 5px;  margin-left: 24px;"/>
+			<br>
+			<div id="pdiv"></div>
+			<br>
+			<label id="sub1" >Submit</label>
+			
+			<input type="button" id="chk" name="submit" value="conchk" hidden="true"/> 
+	
+		</form>
+	
+	</div>
+
+	<div id="bx2" class="bx2">
+	
+		<label id="msg2">Not A Member?</label>
+		<label id="regusr" >Sign Up Here</label><br>
+	
+	</div>
+	
+	<div class="col-3 regdiv" id="regdiv" hidden="true" >
+		
+		<label class="msg2">Register:</label>
+	
+	
+		<form class="reginpt" id="reginpt">
+			<label for="runame">User Name:</label>
+			<input type="text" id="runame" name="regusrnam" placeholder="" style="border-radius: 5px; margin-left: 84px;"/>
+			<label id="eruname"></label>
+			<br></br>
+			<label for="rpass">Password:</label>
+			<input type="text" id="rpass" name="regpasswrd" placeholder="" style="border-radius: 5px; margin-left: 98px;"/>
+			<label id="erupass"></label>
+			<br></br>
+			<label for="rcpass">Confirm Password:</label>
+			<input type="text" id="rcpass" name="regconfpasswrd" placeholder="" style="border-radius: 5px; margin-left: 20px;"/> 
+			<label id="ercpass"></label>
+			<br></br>	
+			<label for="remail">Email:</label>
+			<input type="text" id="remail" name="regemail" placeholder="email@example.com" style="border-radius: 5px; margin-left: 130px;"/> 
+			<label id="eremail"></label>
+			<br></br>
+			<label for="rtel">Phone:</label>
+			<input type="text" id="rtel" name="regphone" placeholder="xxx-xxx-xxxx" style="border-radius: 5px; margin-left: 126px;"/> 
+			<label id="ertel"></label>
+			<br></br>
+			<label for="rpass">First Name:</label>
+			<input type="text" id="rfname" name="regfname" placeholder="" style="border-radius: 5px; margin-left: 82px;"/>  
+			<label id="erfname"></label>
+			<br></br>
+			<label for="rpass">Last Name:</label>
+			<input type="text" id="rlname" name="reglname" placeholder="" style="border-radius: 5px; margin-left: 84px;"/>  
+			<label id="erlname"></label>
+			<br></br>
+			<label id="subusr">Submit</label>
+			<label id="cnlusr">Cancel</label>
+			<br></br>
+		</form>
+	
+	</div >
+	
+</div>		
+</body>
+</html>
