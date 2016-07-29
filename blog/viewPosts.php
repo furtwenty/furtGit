@@ -1,12 +1,17 @@
 <?php
 session_start();
 
+
+$_SESSION['name'] = $_GET['usnr'];
+
+
+
+
 if (isset($_POST['action']) == "one") {
 	
 	setBlogSession();
-	displayTable();
 	
-}else if (isset($_POST['action']) == "two") {
+}elseif (isset($_POST['action']) == "two") {
 	
 	displayTable();
 	
@@ -21,6 +26,8 @@ createHeader();
 displayTable();
 
 }
+
+
 function loadScripts(){
 	
 	echo '	
@@ -41,16 +48,6 @@ function loadScripts(){
 				$("#bsubject").val("");
 				$("#blog").val("");
 				$("#indx").val("");
-			
-				$.post( "viewPosts.php",
-	 					{action:"thr"},	
-						function(data){
-					
-			
-						}
-				);
-			
-			
 			});
 	
 			
@@ -63,24 +60,13 @@ function loadScripts(){
 				var sub = $("#bsubject").val();
 				var blo = $("#blog").val();
 				
+				//console.log("index : "+ind);				
 			
-				$.post("viewPosts.php", 
+				$.post("./viewPosts.php", 
 				{action:one,subject:sub,blog:blo,title:tit,bindx:ind},
-				function(data){
-	 			
-						$.post( "viewPosts.php",
-	 					{action:"two",subject:sub,blog:blo,title:tit,bindx:ind},	
-						function(data){
-							
-							$( "#tbldiv" ).html(data);			 	
-	 						
-	 						//enable to move to php for debugging
-	 						//window.location.href = "updatePosts.php";
-			
-						}
-						);
-				
-				$("#dlog").hide();
+				function(data){			
+					$( "#tbldiv" ).html(data);			 		
+					$("#dlog").hide();
 				});
 			}
 			);
@@ -89,7 +75,7 @@ function loadScripts(){
 			btn3.click(
 			function(){
 			
-				$.post( "logout.php",
+				$.post( "./logout.php",
 	 					{},	
 						function(data){
 					
@@ -117,8 +103,10 @@ function setBlogSession(){
 	$_SESSION['bsub'] = $_POST['subject'];
 	$_SESSION['blog'] = $_POST['blog'];
 	
+
 	updatePost();
-	
+
+	displayTable();
 	
 }
 
@@ -157,7 +145,7 @@ function displayTable()
 	echo '<div id="tbldiv" style="height:200px;overflow:auto;" >';
 	echo '<table id="tbl1" cellpadding="3" >';
 
-	$fileParse = file_get_contents(".\\post.txt");
+	$fileParse = file_get_contents("./post.txt");
 	
 	$j = json_decode($fileParse,true);
 
@@ -223,38 +211,55 @@ function displayTable()
 //echo var_dump($_GET);
 //echo var_dump($_POST);
 function updatePost(){
+	
+	//echo var_dump($_SESSION);
 
 	date_default_timezone_set('America/Mexico_City');
 
-	$fileParse = file_get_contents(".\\post.txt");
+	$fileParse = file_get_contents("./post.txt");
+
+	$j = array();
+
+	$k = array();
 
 	$j = json_decode($fileParse,true);
 
 	$setFlag=0;
 	$i = 0;
-
-	//holds value of consturcted blog list
-	$p = array();
-
+	
 	if($_SESSION['indx']!=""){
-		foreach ($j['postList'] as &$pobject){
+		foreach ($j['postList'] as $pobject){
 
 			if($_SESSION['indx']==$i){
 
 				$pobject['data']['title'] = $_SESSION['btit'];
 				$pobject['data']['subject'] = $_SESSION['bsub'];
 				$pobject['data']['postData'] = $_SESSION['blog'];
+				//print_r($pobject['data']['title']);
 
-
-
+					
 				$setFlag=1;
 			}
+			array_push($k,$pobject);
 			$i++;
 		}
-		$p = $j;
+
+		$la = array("postList"=>$k);
+
+		$p = json_encode($la);
+
+		//print_r($p);
+
+		file_put_contents("./post.txt",$p);
+		
+
 	}
+
+
+
 	if($setFlag==0){
 
+		//print_r("i got called");
 
 		$username = $_SESSION['name'];
 
@@ -290,9 +295,14 @@ function updatePost(){
 		foreach($j['postList'] as $object){
 			array_push($a,$object);
 		}
+		
 
-		$b = ["postList"=>$a];
-		$p = $b;
+		$p = array("postList"=>$a);
+	
+		$d = json_encode($p);
+
+		file_put_contents("./post.txt",$d);
+		
 	}
 
 	//print_r(json_encode($j));
@@ -303,11 +313,12 @@ function updatePost(){
 	//$c = ["postList"=>$b];
 	//print_r(json_encode($c));
 
-	$d = json_encode($p);
+	//$d = json_encode($p);
 
 	//print_r($j);
 
-	file_put_contents(".\\post.txt",$d);
+
+	//file_put_contents("./post.txt",$d);
 
 	$_SESSION['indx'] = "";
 
