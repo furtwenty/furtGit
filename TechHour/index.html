@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is an index page for Furtwenty Live Stream Dev Page."/>
+
+    <title>FurtTech Live Feed</title>
+   
+    <!-- Bootstrap -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme--> 
+    <link href="./bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!--IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
+    
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://www.twitch.tv/furtwenty">FurtTech Live Feed</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse main-nav">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+
+            <!--Git hub Link in nav Bar-->
+            <li><a href="https://github.com/furtwenty/tech-Hour">Bits-of-Bytes</a></li>
+             <!--Dropdown in nav bar-->
+             <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/blogspot/login.html">Blog</a></li>
+                  <li><a href="/sbl/login.html">Library</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="/MPage/login.html">M-Page</a></li>
+               </ul>
+              </li>
+            <!--Discord Drop Down-->  
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Discord<span class="caret"></span></a>
+              <ul class="dropdown-menu" style="background-color:black; margin:3px;">
+                <a href="https://discord.gg/jZNFtFG"><img src="//discordapp.com/api/servers/186766136409456640/widget.png?style=banner2"></a>
+              </ul>
+            </li>
+            <!--Donations nav bar-->
+            <li><a href="https://www.paypal.me/Furtwenty">Donations</a></li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar2" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+          <li>
+
+            <p class="navbar-text">Stream Status:</p>
+
+          </li>
+
+          <!--Online Game-->
+          <li>
+            <a class="navbar-brand">
+
+              <div id="on-game"></div>                      
+              
+            </a>
+          </li>
+          <!--Online Title-->
+          <li>
+            <a class="navbar-brand">
+
+              <div id="on-tit"></div>                      
+      
+            </a>
+          </li>
+          <!--Online Viewers-->
+          <li>
+            <a class="navbar-brand">
+
+              <div id="on-views"></div>                      
+      
+            </a>
+          </li>
+          <li>
+            <!--Online indicator nav bar-->
+            <a class="navbar-brand">
+                      
+               <div class="dot"><p id="on-ind" class="navbar-text"></p></div>
+               <div class="pulse"></div>
+             
+            </a>
+          </li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="jumbotron">
+        
+            <!--chat window-->
+            <iframe id = "on-chat" frameborder="1" scrolling="no" src="https://twitch.tv/chat/embed?channel=furtwenty" height="600" width="350"></iframe>
+            <!-- 16:9 aspect ratio -->
+            <div id ="on-vid" class="embed-responsive embed-responsive-16by9"></div>
+
+            <a href="https://www.twitch.tv/logout"><span class='label label-warning'>Twitch Logout <span class="glyphicon glyphicon-trash"></span></span></a>
+        </div>
+    </div> 
+
+    <div class="container">
+      <div class="jumbotron">
+       <h2>The $#!7 Wall</h2>
+        <p>
+          A New Home to the FurtTech Live Feed!
+        </br>
+          I will be Messing stuff up for a few weeks...
+        </p>
+        <p>
+          <a class="btn btn-success btn-lg" href="http://www.twitch.tv/furtwenty" role="button">Twitch</a>    
+        </p>
+      </div>
+    </div>
+
+          
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="container">
+        <!-- Page Visit div -->
+        <p id="cntdiv" class="navbar-text"></p>
+        
+      </div>
+    </nav>
+
+
+    <!-- Bootstrap core JavaScript================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <link rel="stylesheet" type="text/css" href="./indsyl.css">
+    <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+    <script type="text/javascript" src="./indjs.js"></script>
+
+
+  </body>
+
+</html>
+
