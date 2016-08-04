@@ -16,22 +16,22 @@
 ## Some Basic Guide-lines for the Newbies(No worries we have all been their):
 
 1. JSON files are written in plain text
-..* no fancy markup languages
-..* no programming logic is used
+* no fancy markup languages
+* no programming logic is used
 
 2. JSON files can be written using
-..* basic text editor
-..* Third party JSON editors
-..* JSON tools provided within IDE's
+* basic text editor
+* Third party JSON editors
+* JSON tools provided within IDE's
 
 3. JSON can have multiple data types
-..* Number - a signed decimal value in the real mathmatical domain
-..* String - a sequence of proper unicode charaters
-..* Boolean - of course TRUE or FALSE
-..* Array - basic array structure (may be empty array)
-..* Objects - an unordered collection of key=>value pairs associated with a certain object format, must follow proper object syntax.
-..* Null
-..* Note:: white space is allowed between data and ignored unless contained within a string value (more on this below)
+* Number - a signed decimal value in the real mathmatical domain
+* String - a sequence of proper unicode charaters
+* Boolean - of course TRUE or FALSE
+* Array - basic array structure (may be empty array)
+* Objects - an unordered collection of key=>value pairs associated with a certain object format, must follow proper object syntax.
+* Null
+* Note:: white space is allowed between data and ignored unless contained within a string value (more on this below)
 
 ## An Example:
 
