@@ -24,7 +24,7 @@
 </head>
 
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -40,11 +40,12 @@
             <li class="active"><a href="#">Home</a></li>
 
             <!--Git hub Link in nav Bar-->
-            <li><a href="https://github.com/furtwenty/tech-Hour">Bits-of-Bytes</a></li>
+            <li><a href="https://github.com/furtwenty/furtGit">Bits-of-Bytes</a></li>
              <!--Dropdown in nav bar-->
              <li class="dropdown">
              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples<span class="caret"></span></a>
                 <ul class="dropdown-menu">
+                  <li class="dropdown-header">Completed Demo Projects</li>
                   <li><a href="/blogspot/login.html">Blog</a></li>
                   <li><a href="/sbl/login.html">Library</a></li>
                   <li role="separator" class="divider"></li>
@@ -66,7 +67,38 @@
       </div>
     </nav>
 
-    <nav class="navbar navbar-inverse navbar-static-top">
+    
+     <div class="container-fluid">
+      <div class="row">
+        <!-- 16:9 aspect ratio -->
+        <!--<div id ="on-vid" class="col-lf-8 embed-responsive embed-responsive-16by9"></div>-->
+        <!-- 4:3 aspect ratio -->
+        <div id = "on-vid" class="col-xs-12 col-sm-6 col-md-8"></div>
+       
+        <div class="col-xs-6 col-md-4">
+              <!--chat window-->              
+              <iframe class="embed-responsive-item" id = "on-chat" frameborder="1" scrolling="no" src="https://twitch.tv/chat/embed?channel=furtwenty" height="600" width="330" ></iframe>
+        </div> 
+      </div>
+    </div>
+  
+    <div class="container-fluid">
+      <div class="jumbotron">
+       <h2>The $#!7 Wall</h2>
+        <p>
+          A New Home to the FurtTech Live Feed!
+        </br>
+          I will be Messing stuff up for a few weeks...
+        </p>
+        <p>
+          <a class="btn btn-success btn-lg" href="http://www.twitch.tv/furtwenty" role="button">Twitch</a>    
+
+        </p>
+      </div>
+    </div>
+
+          
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">
@@ -117,50 +149,23 @@
              
             </a>
           </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+           <li>
+            
+            <!-- Page Visit div -->
+             <p id="cntdiv" class="navbar-text"></p>
+            </li>
+            <li>
+             <a href="https://www.twitch.tv/logout"><span class='label label-warning'>Twitch Logout <span class="glyphicon glyphicon-trash"></span></span></a>
+
+            </li>
 
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
-    <div class="container">
-      <div class="jumbotron">
-        
-            <!--chat window-->
-            <iframe id = "on-chat" frameborder="1" scrolling="no" src="https://twitch.tv/chat/embed?channel=furtwenty" height="600" width="350"></iframe>
-            <!-- 16:9 aspect ratio -->
-            <div id ="on-vid" class="embed-responsive embed-responsive-16by9"></div>
-
-            <a href="https://www.twitch.tv/logout"><span class='label label-warning'>Twitch Logout <span class="glyphicon glyphicon-trash"></span></span></a>
-        </div>
-    </div> 
-
-    <div class="container">
-      <div class="jumbotron">
-       <h2>The $#!7 Wall</h2>
-        <p>
-          A New Home to the FurtTech Live Feed!
-        </br>
-          I will be Messing stuff up for a few weeks...
-        </p>
-        <p>
-          <a class="btn btn-success btn-lg" href="http://www.twitch.tv/furtwenty" role="button">Twitch</a>    
-        </p>
-      </div>
-    </div>
-
-          
-
-
-    <nav class="navbar navbar-inverse navbar-fixed-bottom">
-      <div class="container">
-        <!-- Page Visit div -->
-        <p id="cntdiv" class="navbar-text"></p>
-        
-      </div>
-    </nav>
-
-
     <!-- Bootstrap core JavaScript================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

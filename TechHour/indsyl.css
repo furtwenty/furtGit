@@ -5,35 +5,12 @@ html{
 }
 
 body{
-	padding-top: 50px;
+	padding-top: 0px;
 	padding-bottom: 70px;
 	background: darkgrey;
 }
 
-iframe {
 
-	width: 75%;
-
-	display: inline-block;
-
-    float: left;
-}
-
-#on-chat{
-
-	width: 25%;
-
-	display: inline-block;
-	float: right;
-
-}
-
-.frame{
-
-	margin-left: 10px;
-	margin-right: 10px;
-
-}
 
 /*---------------------flashing online----------------------------*/
 
@@ -119,4 +96,3 @@ iframe {
     opacity: 0.0;
  }
 }
-

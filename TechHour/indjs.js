@@ -70,7 +70,7 @@ $(document).ready(function(){
 			document.getElementById("on-tit").innerHTML = "<span class='label label-default'>Viewers : "+views+"</span>";
 			//document.getElementById("on-chat").innerHTML = '';
 
-			document.getElementById("on-vid").innerHTML = '<iframe scrolling="no" id="chat_embed" src="https://player.twitch.tv/?channel=furtwenty" height="900" width="1600"></iframe>';
+			document.getElementById("on-vid").innerHTML = '<iframe class="embed-responsive-item" scrolling="no" id="chat_embed" src="https://player.twitch.tv/?channel=furtwenty" height="600" width="900"></iframe>';
 
 			/*
 			//object containing stream info
